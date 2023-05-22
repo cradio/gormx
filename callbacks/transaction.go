@@ -1,5 +1,7 @@
 package callbacks
 
+import "github.com/cradio/gormx"
+
 func BeginTransaction(db *gorm.DB) {
 	if !db.Config.SkipDefaultTransaction && db.Error == nil {
 		if tx := db.Begin(); tx.Error == nil {

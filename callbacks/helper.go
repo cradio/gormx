@@ -4,6 +4,7 @@ import (
 	"reflect"
 	"sort"
 
+	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/clause"
 )
 

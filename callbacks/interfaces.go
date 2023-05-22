@@ -1,5 +1,7 @@
 package callbacks
 
+import "github.com/cradio/gormx"
+
 type BeforeCreateInterface interface {
 	BeforeCreate(*gorm.DB) error
 }
