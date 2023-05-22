@@ -176,7 +176,7 @@ func (db *DB) Select(query interface{}, args ...interface{}) (tx *DB) {
 
 // SelectFields selects all gorm fields provided in data, args are passed directly to GORM
 func (db *DB) SelectFields(data interface{}, args ...interface{}) *DB {
-	return db.Select(db.fields(data), args)
+	return db.Select(db.fields(data), args...)
 }
 
 // Omit specify fields that you want to ignore when creating, updating and querying
