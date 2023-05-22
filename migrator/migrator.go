@@ -10,6 +10,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/clause"
 	"github.com/cradio/gormx/logger"
 	"github.com/cradio/gormx/schema"
