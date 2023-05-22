@@ -2,6 +2,7 @@ package gorm
 
 import (
 	"fmt"
+	"reflect"
 	"regexp"
 	"strings"
 
@@ -173,6 +174,11 @@ func (db *DB) Select(query interface{}, args ...interface{}) (tx *DB) {
 	return
 }
 
+// SelectFields selects all gorm fields provided in data, args are passed directly to GORM
+func (db *DB) SelectFields(data interface{}, args ...interface{}) *DB {
+	return db.Select(db.fields(data), args)
+}
+
 // Omit specify fields that you want to ignore when creating, updating and querying
 func (db *DB) Omit(columns ...string) (tx *DB) {
 	tx = db.getInstance()
@@ -203,6 +209,22 @@ func (db *DB) Where(query interface{}, args ...interface{}) (tx *DB) {
 		tx.Statement.AddClause(clause.Where{Exprs: conds})
 	}
 	return
+}
+
+// WhereBinary selects ONLY ONE struct value and executes is as WHERE BINARY
+func (db *DB) WhereBinary(data interface{}) *DB {
+	t := reflect.TypeOf(data)
+	v := reflect.ValueOf(data)
+	for i := 0; i < t.NumField(); i++ {
+		ft := t.Field(i)
+		fv := v.Field(i)
+		if fv.Interface() != reflect.Zero(ft.Type).Interface() {
+			sql := fmt.Sprintf("BINARY %s=?", Column(data, ft.Name))
+			val := fv.String()
+			return db.Where(sql, val)
+		}
+	}
+	return db
 }
 
 // Not add NOT conditions

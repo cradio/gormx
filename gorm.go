@@ -4,7 +4,9 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
+	"reflect"
 	"sort"
+	"strings"
 	"sync"
 	"time"
 
@@ -491,6 +493,37 @@ func (db *DB) Use(plugin Plugin) error {
 func (db *DB) ToSQL(queryFn func(tx *DB) *DB) string {
 	tx := queryFn(db.Session(&Session{DryRun: true, SkipDefaultTransaction: true}))
 	stmt := tx.Statement
-
 	return db.Dialector.Explain(stmt.SQL.String(), stmt.Vars...)
+}
+
+// Column selects only specified column from struct
+func Column(model interface{}, field string) string {
+	f, ok := reflect.TypeOf(model).FieldByName(field)
+	if !ok {
+		return ""
+	}
+	val, ok := f.Tag.Lookup("gorm")
+	if !ok {
+		return ""
+	}
+	keys := strings.Split(val, ";")
+	for _, key := range keys {
+		kv := strings.Split(key, ":")
+		if kv[0] == "column" && len(kv) > 1 {
+			return kv[1]
+		}
+	}
+	return ""
+}
+
+func (g *DB) fields(data interface{}) (fields []string) {
+	t := reflect.TypeOf(data)
+	for i := 0; i < t.NumField(); i++ {
+		ft := t.Field(i)
+		tbl := Column(data, ft.Name)
+		if len(tbl) > 0 {
+			fields = append(fields, tbl)
+		}
+	}
+	return fields
 }
