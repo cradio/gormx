@@ -9,10 +9,10 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
-	"gorm.io/gorm/utils"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/logger"
+	"github.com/cradio/gormx/schema"
+	"github.com/cradio/gormx/utils"
 )
 
 // Create inserts value, returning the inserted data's primary key in value's id

@@ -4,10 +4,10 @@ import (
 	"sync"
 	"testing"
 
-	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/schema"
-	"gorm.io/gorm/utils/tests"
+	"github.com/cradio/gormx"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/schema"
+	"github.com/cradio/gormx/utils/tests"
 )
 
 func TestJoin(t *testing.T) {

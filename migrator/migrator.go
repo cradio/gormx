@@ -10,10 +10,10 @@ import (
 	"strings"
 	"time"
 
-	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
+	"github.com/cradio/gormx"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/logger"
+	"github.com/cradio/gormx/schema"
 )
 
 var regFullDataType = regexp.MustCompile(`\D*(\d+)\D?`)

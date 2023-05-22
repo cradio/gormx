@@ -3,8 +3,8 @@ package gorm
 import (
 	"reflect"
 
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/schema"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/schema"
 )
 
 // Migrator returns migrator

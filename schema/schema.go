@@ -9,8 +9,8 @@ import (
 	"strings"
 	"sync"
 
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/logger"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/logger"
 )
 
 // ErrUnsupportedDataType unsupported data type
