@@ -1,7 +1,5 @@
 package callbacks
 
-import "gorm.io/gorm"
-
 type BeforeCreateInterface interface {
 	BeforeCreate(*gorm.DB) error
 }

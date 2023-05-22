@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"time"
 
-	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/utils/tests"
 )
 

@@ -11,9 +11,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/jinzhu/now"
 	"github.com/cradio/gormx/clause"
 	"github.com/cradio/gormx/utils"
+	"github.com/jinzhu/now"
 )
 
 // special types' reflect type

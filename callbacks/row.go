@@ -1,9 +1,5 @@
 package callbacks
 
-import (
-	"gorm.io/gorm"
-)
-
 func RowQuery(db *gorm.DB) {
 	if db.Error == nil {
 		BuildQuerySQL(db)

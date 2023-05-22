@@ -10,9 +10,9 @@ import (
 	"sync"
 	"time"
 
-	"gorm.io/gorm/clause"
-	"gorm.io/gorm/logger"
-	"gorm.io/gorm/schema"
+	"github.com/cradio/gormx/clause"
+	"github.com/cradio/gormx/logger"
+	"github.com/cradio/gormx/schema"
 )
 
 // for Config.cacheStore store PreparedStmtDB key

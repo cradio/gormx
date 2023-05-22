@@ -4,7 +4,6 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/schema"
 )
 

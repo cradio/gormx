@@ -4,8 +4,7 @@ import (
 	"reflect"
 	"sort"
 
-	"gorm.io/gorm"
-	"gorm.io/gorm/clause"
+	"github.com/cradio/gormx/clause"
 )
 
 // ConvertMapToValuesForCreate convert map to values

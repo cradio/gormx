@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/jinzhu/inflection"
 	"github.com/cradio/gormx/clause"
+	"github.com/jinzhu/inflection"
 )
 
 // RelationshipType relationship type

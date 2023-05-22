@@ -8,8 +8,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/jinzhu/now"
 	"github.com/cradio/gormx/logger"
+	"github.com/jinzhu/now"
 )
 
 type JSON json.RawMessage

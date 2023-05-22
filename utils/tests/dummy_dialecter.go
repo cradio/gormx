@@ -1,7 +1,6 @@
 package tests
 
 import (
-	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/callbacks"
 	"github.com/cradio/gormx/clause"
 	"github.com/cradio/gormx/logger"

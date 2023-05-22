@@ -4,7 +4,6 @@ import (
 	"reflect"
 	"strings"
 
-	"github.com/cradio/gormx"
 	"github.com/cradio/gormx/clause"
 	"github.com/cradio/gormx/schema"
 	"github.com/cradio/gormx/utils"
